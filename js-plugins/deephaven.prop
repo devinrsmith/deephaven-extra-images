@@ -1,0 +1,5 @@
+includefiles=dh-defaults.prop
+
+deephaven.console.type=python
+
+deephaven.jsPlugins.resourceBase=/opt/deephaven/config/js-plugins
