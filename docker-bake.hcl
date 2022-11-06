@@ -27,6 +27,10 @@ variable "TAG" {
     default = "latest"
 }
 
+variable "CACHE_PREFIX" {
+    default = "deephaven-extra-images-"
+}
+
 # -------------------------------------
 
 target "web-plugin-packager" {
@@ -75,6 +79,8 @@ target "plotly" {
 target "web-plugin-packager-release" {
     inherits = [ "web-plugin-packager" ]
     platforms = [ "linux/amd64", "linux/arm64" ]
+    cache-from = [ "type=gha,scope=${CACHE_PREFIX}web-plugin-packager" ]
+    cache-to = [ "type=gha,mode=max,scope=${CACHE_PREFIX}web-plugin-packager" ]
 }
 
 # -------------------------------------
@@ -82,11 +88,15 @@ target "web-plugin-packager-release" {
 target "matplotlib-release" {
     inherits = [ "matplotlib" ]
     platforms = [ "linux/amd64", "linux/arm64" ]
+    cache-from = [ "type=gha,scope=${CACHE_PREFIX}matplotlib" ]
+    cache-to = [ "type=gha,mode=max,scope=${CACHE_PREFIX}matplotlib" ]
 }
 
 target "plotly-release" {
     inherits = [ "plotly" ]
     platforms = [ "linux/amd64", "linux/arm64" ]
+    cache-from = [ "type=gha,scope=${CACHE_PREFIX}plotly" ]
+    cache-to = [ "type=gha,mode=max,scope=${CACHE_PREFIX}plotly" ]
 }
 
 # -------------------------------------
