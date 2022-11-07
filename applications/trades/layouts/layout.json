@@ -1,0 +1,289 @@
+{
+  "filterSets": [],
+  "layoutConfig": [
+    {
+      "type": "column",
+      "isClosable": true,
+      "isFocusOnShow": true,
+      "reorderEnabled": true,
+      "title": "",
+      "content": [
+        {
+          "type": "row",
+          "isClosable": true,
+          "isFocusOnShow": true,
+          "reorderEnabled": true,
+          "title": "",
+          "height": 35.30326594090202,
+          "content": [
+            {
+              "type": "stack",
+              "isClosable": true,
+              "isFocusOnShow": true,
+              "reorderEnabled": true,
+              "title": "",
+              "width": 75,
+              "activeItemIndex": 0,
+              "content": [
+                {
+                  "type": "react-component",
+                  "component": "ConsolePanel",
+                  "title": "Console",
+                  "isClosable": false,
+                  "id": "nb2KQL7Uz",
+                  "props": {
+                    "metadata": {},
+                    "panelState": {
+                      "consoleSettings": {},
+                      "itemIds": []
+                    }
+                  },
+                  "componentName": "lm-react-component",
+                  "isFocusOnShow": true,
+                  "reorderEnabled": true,
+                  "componentState": null
+                },
+                {
+                  "type": "react-component",
+                  "component": "LogPanel",
+                  "title": "Log",
+                  "isClosable": false,
+                  "id": "P35CGKcasX",
+                  "props": {
+                    "metadata": {}
+                  },
+                  "componentName": "lm-react-component",
+                  "isFocusOnShow": true,
+                  "reorderEnabled": true,
+                  "componentState": null
+                }
+              ]
+            },
+            {
+              "type": "stack",
+              "width": 25,
+              "isClosable": true,
+              "isFocusOnShow": true,
+              "reorderEnabled": true,
+              "title": "",
+              "activeItemIndex": 0,
+              "content": [
+                {
+                  "type": "react-component",
+                  "component": "CommandHistoryPanel",
+                  "title": "Command History",
+                  "isClosable": false,
+                  "id": "Axd36N8Ajb",
+                  "props": {
+                    "metadata": {},
+                    "panelState": {}
+                  },
+                  "componentName": "lm-react-component",
+                  "isFocusOnShow": true,
+                  "reorderEnabled": true,
+                  "componentState": null
+                },
+                {
+                  "type": "react-component",
+                  "component": "FileExplorerPanel",
+                  "title": "File Explorer",
+                  "isClosable": false,
+                  "id": "66R-lBIgeg",
+                  "props": {
+                    "metadata": {}
+                  },
+                  "componentName": "lm-react-component",
+                  "isFocusOnShow": true,
+                  "reorderEnabled": true,
+                  "componentState": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "row",
+          "isClosable": true,
+          "isFocusOnShow": true,
+          "reorderEnabled": true,
+          "title": "",
+          "height": 64.69673405909798,
+          "content": [
+            {
+              "type": "stack",
+              "isClosable": true,
+              "isFocusOnShow": true,
+              "reorderEnabled": true,
+              "title": "",
+              "height": 60.73094867807154,
+              "activeItemIndex": 0,
+              "width": 28.02992518703242,
+              "content": [
+                {
+                  "type": "react-component",
+                  "component": "MarkdownPanel",
+                  "props": {
+                    "metadata": {},
+                    "panelState": {
+                      "content": "# This is an example application\n\nIt's a combination of some extra requirements, some python code, some extra configuration, and glueing it all together using Docker.\n\n\napp.d/trades.app:\n```properties\ntype=script\nscriptType=python\nid=io.deephaven.trades\nname=Trades Application\nenabled=true\nfile_0=trades.py\n```\n\napp.d/trades.py:\n```python\nimport deephaven\n# More python code\n# ...\n# See https:// <todo>\n```\n\nDockerfile:\n```Dockerfile\n# syntax=docker/dockerfile:1.4\n\nFROM ghcr.io/deephaven/server:latest\nRUN pip install websocket-client\nCOPY --link app.d /opt/deephaven/config/app.d\nCOPY --link layouts /data/storage/layouts\nVOLUME /data/storage/layouts\nENV START_OPTS=\"-Ddeephaven.application.dir=/opt/deephaven/config/app.d\"\n```\n\nbuild:\n```bash\ndocker buildx build -t deephaven-trades --load\n```"
+                    }
+                  },
+                  "title": "README",
+                  "id": "fFCxwsEnc",
+                  "componentName": "lm-react-component",
+                  "isClosable": true,
+                  "isFocusOnShow": true,
+                  "reorderEnabled": true,
+                  "componentState": null
+                }
+              ]
+            },
+            {
+              "type": "column",
+              "isClosable": true,
+              "isFocusOnShow": true,
+              "reorderEnabled": true,
+              "title": "",
+              "width": 71.97007481296758,
+              "content": [
+                {
+                  "type": "stack",
+                  "header": {},
+                  "isClosable": true,
+                  "isFocusOnShow": true,
+                  "reorderEnabled": true,
+                  "title": "",
+                  "activeItemIndex": 0,
+                  "width": 40.308062589324926,
+                  "height": 21.1340206185567,
+                  "content": [
+                    {
+                      "type": "react-component",
+                      "component": "IrisGridPanel",
+                      "props": {
+                        "metadata": {
+                          "name": "matches_stats",
+                          "table": "matches_stats"
+                        },
+                        "panelState": {
+                          "irisGridPanelState": {
+                            "isSelectingPartition": false,
+                            "partitionColumn": null
+                          },
+                          "irisGridState": {
+                            "advancedFilters": [],
+                            "aggregationSettings": {
+                              "aggregations": [],
+                              "showOnTop": false
+                            },
+                            "customColumnFormatMap": [],
+                            "isFilterBarShown": false,
+                            "quickFilters": [],
+                            "sorts": [],
+                            "userColumnWidths": [],
+                            "userRowHeights": [],
+                            "customColumns": [],
+                            "conditionalFormats": [],
+                            "reverseType": "none",
+                            "showSearchBar": false,
+                            "searchValue": "",
+                            "selectDistinctColumns": [],
+                            "selectedSearchColumns": [],
+                            "invertSearchColumns": true,
+                            "pendingDataMap": [],
+                            "frozenColumns": null
+                          },
+                          "gridState": {
+                            "isStuckToBottom": false,
+                            "isStuckToRight": false,
+                            "movedColumns": [],
+                            "movedRows": []
+                          },
+                          "pluginState": null
+                        }
+                      },
+                      "title": "Stats",
+                      "id": "2mWsjGDxR",
+                      "componentName": "lm-react-component",
+                      "isClosable": true,
+                      "isFocusOnShow": true,
+                      "reorderEnabled": true,
+                      "componentState": null
+                    }
+                  ]
+                },
+                {
+                  "type": "stack",
+                  "header": {},
+                  "isClosable": true,
+                  "isFocusOnShow": true,
+                  "reorderEnabled": true,
+                  "title": "",
+                  "activeItemIndex": 0,
+                  "height": 78.8659793814433,
+                  "content": [
+                    {
+                      "type": "react-component",
+                      "component": "IrisGridPanel",
+                      "props": {
+                        "metadata": {
+                          "name": "matches_table",
+                          "table": "matches_table"
+                        },
+                        "panelState": {
+                          "irisGridPanelState": {
+                            "isSelectingPartition": false,
+                            "partitionColumn": null
+                          },
+                          "irisGridState": {
+                            "advancedFilters": [],
+                            "aggregationSettings": {
+                              "aggregations": [],
+                              "showOnTop": false
+                            },
+                            "customColumnFormatMap": [],
+                            "isFilterBarShown": false,
+                            "quickFilters": [],
+                            "sorts": [],
+                            "userColumnWidths": [],
+                            "userRowHeights": [],
+                            "customColumns": [],
+                            "conditionalFormats": [],
+                            "reverseType": "none",
+                            "showSearchBar": false,
+                            "searchValue": "",
+                            "selectDistinctColumns": [],
+                            "selectedSearchColumns": [],
+                            "invertSearchColumns": true,
+                            "pendingDataMap": [],
+                            "frozenColumns": null
+                          },
+                          "gridState": {
+                            "isStuckToBottom": false,
+                            "isStuckToRight": false,
+                            "movedColumns": [],
+                            "movedRows": []
+                          },
+                          "pluginState": null
+                        }
+                      },
+                      "title": "Trades",
+                      "id": "OHQ9hrxJP",
+                      "componentName": "lm-react-component",
+                      "isClosable": true,
+                      "isFocusOnShow": true,
+                      "reorderEnabled": true,
+                      "componentState": null
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "links": [],
+  "version": 2
+}

@@ -1,9 +1,9 @@
 group "default" {
-    targets = [ "js-plugins" ]
+    targets = [ "js-plugins", "applications" ]
 }
 
 group "release" {
-    targets = [ "js-plugins-release" ]
+    targets = [ "js-plugins-release", "applications-release" ]
 }
 
 group "js-plugins" {
@@ -13,11 +13,24 @@ group "js-plugins" {
     ]
 }
 
+group "applications" {
+    targets = [
+        "trades"
+    ]
+}
+
+
 group "js-plugins-release" {
     targets = [
         "web-plugin-packager-release",
         "matplotlib-release",
         "plotly-release"
+    ]
+}
+
+group "applications-release" {
+    targets = [
+        "trades-release"
     ]
 }
 
@@ -84,6 +97,15 @@ target "plotly" {
 
 # -------------------------------------
 
+target "trades" {
+    context = "applications/trades/"
+    tags = [
+        "${REPO_PREFIX}deephaven-trades-app:${TAG}"
+    ]
+}
+
+# -------------------------------------
+
 target "web-plugin-packager-release" {
     inherits = [ "web-plugin-packager" ]
     platforms = [ "linux/amd64", "linux/arm64" ]
@@ -105,6 +127,15 @@ target "plotly-release" {
     platforms = [ "linux/amd64", "linux/arm64" ]
     cache-from = [ "type=gha,scope=${CACHE_PREFIX}plotly" ]
     cache-to = [ "type=gha,mode=max,scope=${CACHE_PREFIX}plotly" ]
+}
+
+# -------------------------------------
+
+target "trades-release" {
+    inherits = [ "trades" ]
+    platforms = [ "linux/amd64", "linux/arm64" ]
+    cache-from = [ "type=gha,scope=${CACHE_PREFIX}trades" ]
+    cache-to = [ "type=gha,mode=max,scope=${CACHE_PREFIX}trades" ]
 }
 
 # -------------------------------------
