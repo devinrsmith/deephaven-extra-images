@@ -1,11 +1,19 @@
 group "default" {
+    targets = [ "js-plugins" ]
+}
+
+group "release" {
+    targets = [ "js-plugins-release" ]
+}
+
+group "js-plugins" {
     targets = [
         "matplotlib",
         "plotly"
     ]
 }
 
-group "release" {
+group "js-plugins-release" {
     targets = [
         "web-plugin-packager-release",
         "matplotlib-release",
